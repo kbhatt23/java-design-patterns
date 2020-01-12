@@ -1,0 +1,9 @@
+Reason of factory usage:
+a constuctor can not provide constructor with same data type but with different variable names:
+eg:  Rectangle(int length)
+	Rectange(int width) : same data type will block
+
+
+A normal inner class can not have a static function inside it.
+Only static inner class can have static method. Also static inner class can be accessed
+without the access of outer class

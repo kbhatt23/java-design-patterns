@@ -1,0 +1,12 @@
+In case su[per is serializable and child auto will be serilizable 
+and all the proeprties of child and partent will be present on deserializing
+
+in case super is serializble and u want to block serializtion of child
+override readObject and writeObject and throw exception
+
+In case super class is not serializable but child is then in super we need a no arg constructor
+which will be used while deserializing as value of super is not called
+so since value is not present in serialized file, it calls no arg constructor of super class
+if not present will give exception
+we can set proeprty values to default here to show up in deserilized
+

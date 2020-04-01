@@ -1,0 +1,90 @@
+all design patterns uses design prinicple
+design principles focus on high cohesion and low coupling
+prioritizes abstraction over implementation
+
+High level modules -> which gets modified very less
+low level modules -> classes whihc gets modified more
+
+So high level module should use low level modules using interfaces so that contract never breaks
+when we change low level module the users of this class hsould not get affected and interfaces makes sure of this contract
+
+use inheritance to reduce code duplication and use extends abstract class or interfaces(as of java 8 default and static are added)
+
+design principle divides things that will get changed to that form that never change
+this way we can make code maintaineable to the future changes rapidly without causing regression
+
+Abstraction : purpose of abstraction is to hide things that how things are implemented but we show the contract
+this canbe done using interfaces and abstract classes. we show interaces or abstract classes methods that we want to show to users of this class
+we can create private methods and hide them in implmenetaion classes of each emthods
+hence data abstraction is established by showing what methods to use to get the job done and hiding how it is done
+
+encapsulation : this is achieved by setter getters and private instance variable again hiding data
+
+Aggreation : this is reltionship between two objects when both can remain independently
+eg Airport class hainvg instance variable of Airplanes
+AeroPlane and airport are related but can remain isolated and both can exist t same time
+
+Composition: this is reltionship between two objects when both can not remain independently
+clid class can not exisitt withput parent class
+both aggreagation and comopistion are for has a relationship but in aggreagation both objects can existing independelty 
+but in composition child can not existing without parent
+
+In auto garbage collected languages aggregation and composition looses difference
+
+design principles suppports aggreagation/composition over inheritance
+
+steps in design principle
+a. always code classes to interfaces
+b. always use encapsulation for variating parts of class.
+c. cmposition/aggregation oiver large inheritance : instance variable betwwen object references instead of extending classes
+  -> has a relationship over isa relationship
+d. solid pricnilpe are suported, dependncy injection is supported
+e. delegation principles : 
+
+design smell means design flaws that negate design principle concepts
+
+why to use composition over inheritance:
+- can solve high heirachhies of inheritance and adds readability
+- unit testing can be done in compistion easily
+- loose coupoing in composition : super class change will not effect child class much
+- multiple extends of classes do not exist in java, final class can not be extended but cna be added as instance variable
+
+when maintainability is compromised because of inheriatance(like lot of classes in theheirachy)
+it is better to use composition as even taht solves code reusability and have other benefits as mentioned above
+
+Delagatin principle means breaking big classes insto smaller clases and use compition to use them
+adds ingle responsibility principle to theme
+
+benefits of coding to interface:
+1. no need to break the contract as client classes will adher to interface and hence changing the implementation wont affetct the client
+2. it hides how it is implementated and only shows contract of what is implemented -> abstraction
+3. interfaces allows flexibility as we can create new instance of interface without breaking existing client
+4. if u want to expose an api that needs few methods to be forced wecan use interfaces as implements class is forced to write these abstract methods
+
+Difference bwteen interfaces and abstract class as of java 8
+a. interface has all methods public abstract class can have private and protected also in method
+b. all instance variable are public statif final in interface , abstract methods have this flexibiblityt
+
+intreface can use multiple inheritance
+abstract classes can be used when there is triuct groupoing in interface we can have less strict groupings
+
+Open closed principle helps ins making any class closed for modification, however neew functionalities cna still be added
+- > original solution in GOF was based on inheritance- > coding to interface
+-> however we can also do the same using PRedicate, Function, Bifunction @fiunctional interface as well
+
+Interface segregation priniciple is to enhance the cohesiveness of interfaces
+so that classes are not forced to write empty method that are not even needed
+
+dependency inversion priniciple is a contract between high level and low level module
+
+high levle module is top level class and genegrally lovw leve class is injected in high level class
+principle says that high level class should use low level class using interface abstraction
+DI means we shoudl think not from top to bottom of a root class
+we should think from lowest level class to highest level so that we can abstract lower classes
+
+this introduces low copupling and hence less code will be modified for any change as interface provides that contract
+
+dependency injection is extension of dependency inversion principle -> we do not instantiate the concrete class in instance variable
+Instead we create construtor and pass that type to constrcutor and instantiate that
+however injection is mostly done by framework like it happens in spring
+This help us to do unit testing by mocking from the client

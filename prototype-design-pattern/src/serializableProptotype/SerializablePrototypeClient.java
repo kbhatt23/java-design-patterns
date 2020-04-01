@@ -10,6 +10,7 @@ import java.io.ObjectOutputStream;
 
 public class SerializablePrototypeClient {
 public static void main(String[] args) {
+	System.out.println("procrssprs "+Runtime.getRuntime().availableProcessors());
 	Address address = new Address("delhi", 110075, "c502 majestic apratment");
 	Employee employee = new Employee(23, "hanuman", address);
 	System.out.println("main class is "+employee);

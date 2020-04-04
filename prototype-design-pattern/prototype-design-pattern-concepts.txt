@@ -1,0 +1,10 @@
+prototype design favours cloning over constructor call
+infact in cloning there is no constructor cann and still a new object with a copy of main object is done
+
+When to use:
+when creating a object is a big things, lets create a proptype and clone that to resuse and modify according to needs
+
+disadvantages of clonming
+Only shallow copy to one level is done in new cloned object
+So in overriden clone mehtod we must call clone of instanct cariable whih is of class type
+Can be widely used in cacheing frameworks

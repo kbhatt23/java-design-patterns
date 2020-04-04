@@ -1,0 +1,13 @@
+why to use:
+a. scnenarios when the class hae huge amount of instance variables mainly composition (has a with child beeing dependent on main class)
+ 
+we cna solve above by creating constructirs with so many list but client have to put null for things he do not need
+b. Also in case there are a lot of things that are flexible, some cliet uses it some do  not eg: java api classses like Stream , flux etc
+c. when we want o hide actual impleentation like Strinbuilder in that case we keep on adding things in builder and only once string is created
+
+d. when we can show clinet to create object in parts step by step.
+This is widely used in spring
+
+Not to use scenarios:
+when we want to modify the objects even after creating using build method
+once object is created we shud not modify the object instances

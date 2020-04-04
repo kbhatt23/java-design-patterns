@@ -1,0 +1,18 @@
+it is a creational pattern
+inside creational it is aprt of class type asit is based on inheritance
+
+factory patterns is used when client do not know whihc subclass of one interface is needed
+so it lets a creator interface to decide that and creae instance of it.
+
+benefit : client do not need to focus on how to create object
+less chances of bugs
+if in future changes neede on how to create object of subclasses it can be done in one place
+allows flexibility of programming to interface
+
+Lot of frameworks uses it as they work on very abstract level, and uses inheritance
+useful when client should be hidden by what type of subclass is needed
+
+OOB clases that uses factory pattern:
+Caendar . getInstance
+Strem.of
+DateFormatter.getInstance

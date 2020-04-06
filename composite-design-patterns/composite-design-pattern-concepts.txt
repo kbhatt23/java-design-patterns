@@ -1,0 +1,13 @@
+composite pattern is derived from compistion
+composition menas having a has a realtionship
+Composite design pattern is used when there can be one class representing a group of same class
+
+Example could be profile
+profile cna be from ldap, db or mysql 
+we can comboine them todather
+Example could be tree structure
+One node can contain more than one meaning its a composite item
+or that one can be leaf meaning last entry
+This pattern is used when client do not want to go to complezity
+and consider each node as same interface contract
+child node or composite nodes are considered as same in client

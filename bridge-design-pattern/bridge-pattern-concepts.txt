@@ -1,0 +1,36 @@
+As the name suggest bridge pattern is linking of two parts
+a. abstraction(interface or abstract class-> acting as super class)
+b. implementation : the interface heirachy that handles the actual logic
+
+this pattern is useful when the abstract classes types can vary a lot
+and each type can be implementing using seperate classes
+
+example
+Bad way of coding:
+			Vehicle(Abstract class or interface)
+			
+		Car      Bike    Truck   
+	
+USes within individual classes 
+CarManufacture
+CArPartsMAker
+CarTyreMaker......
+Similiarly we can have same for bike same for truck ....so on for more types of vehicles
+
+so instead of subclassing we can create sepertate interface of manufactures
+and create sublcasses of that and add composition ot abstract class
+This will decouple abstraction and implementation
+This will also help in creating less classes and loose coupling
+as seperate interfaces can be extended seperately
+
+Adapter patterns is used when existing client is fixed to specific interface
+Bridge pattern is used to create fresh contract flexible enough to reduce porblems with interfaces
+		
+		
+Another example:
+LEts say we have Shapes abstraction
+It can be triangle, rectangle, circle
+also we can have red color traingle, green clolr traingle and so on
+both the things shape and colr can have n level of classes
+so instead of creating classes like REdcolortriangle, greencolortraingle, redcolorCircle etc
+We can seperate the implementation(Color) and abstraction(Shape)		

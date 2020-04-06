@@ -1,0 +1,17 @@
+adapter pattern is used when there are two incompatible interfaces
+for example
+In old collections it used enumeration to iterate and delete
+In newer collection it uses Iterator interface
+so adapter is used to integrate these 
+The basic idea is not to modify existing code but to create new classes and interfaces to mange and integrate
+
+This is similart to common adpater betwen chargers like in USA and india
+
+another example can be lets say there are existing vebdor class wit existing logic and interfaces
+now a new vendor comes with new interfaces so instead of modifying old code
+we can create adapter class that takes input as target and redirect to adpatee
+
+adaptee is the old interface
+adapter is the converter
+target is the new vendor
+client calls the target interface

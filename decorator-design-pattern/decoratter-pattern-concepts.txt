@@ -1,0 +1,6 @@
+Decoarator patterns are used in case there could be huge amount of sublcasses for numerous cases
+Similar to bridge patter
+however bridge pattern is meant for newer impleentaion only and decoartor ensures that even for older code structure it works
+In bridge pattern if existing code structure is buiilt we can not use as it will enforce to modify existing code and it may break contract
+in decorator we can create new classes on top of existing and we can reduce subclasses
+Adapter is alsoi meant to solve issue with existing code structure without modifying old code contract

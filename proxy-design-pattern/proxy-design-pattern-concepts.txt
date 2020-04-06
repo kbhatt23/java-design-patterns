@@ -1,0 +1,26 @@
+proxy design pattern invloves btween client class and target class
+
+Proxy can act as a layer in betwwen the clinet class and target api class
+eg:
+a. security proxy: Acting like a firewall
+b. Access proxy: Client's access level and role can define if client can access target class
+c. performace proxy : In cae targetr class is time consuming to instantiate the object
+then proxy patter can filter bad request and let the object create only when it is legal
+This can enhance performace as sometime target class is heavy to instantiate
+
+d. backup proxy: Eg credit card instead of bank for payment
+e. feature proxy: like interceptor
+f. cache proxy: We can add a proxy and increase the performace by using cache
+Eg is spring data cache @cacheable adds a proxy
+Contract is made so that proxy class can substitute the real target class
+so that client od not even know that it is hitting the proxy
+hence shadwoing the target class functionality
+
+structure of proxy design is similiar to decorator patter
+however purpose is different
+decoarator adds features in runtime but proxy restrict the access to main class
+Restriction 
+can increase performance using cache
+can increase performance by not creating target class object until client request is valid
+can increaese security features
+can make proxy as a substitution to main target class eg: credit card instead of bank

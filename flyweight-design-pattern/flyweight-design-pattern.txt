@@ -1,0 +1,23 @@
+Flyweigth pattern is used in case when there are lots of object getting created
+Also all these objects behaves nonethless the same
+eg: Games liks GTa have players
+Games like shootung all the terrorist or anti terrorist are simoliar apart from beeing terrorist or antiterroist
+
+Also so many objhects are need not to be create, we can share the same object among
+the various robots with shareable as well as non shareable properties
+
+Intrinsic Properties: These properties are the things that are sharead among objects
+MEaning these will remain same for all objects. So these things should be made immutable
+
+Extrinsic properties : These properties are the things whihc will be different for different objects
+Thes thing should not be immutable,
+Extrinisic properties are kept in Flyweigth Interface
+These properties should be immutable as it will be same for all
+
+PArts of patters:
+a. Flywweight interface: will have methods of functionaltyes and also setter for extrinsic properties
+instincisc properties are common and need not to be put here
+b. Concrete classe sshould have intrinsic proeprties
+C. Factory class that returns super type
+d. Cache/memoty in hashmap for each objects
+With the help of above we will make only one object and share across all 

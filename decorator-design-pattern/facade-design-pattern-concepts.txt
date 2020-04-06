@@ -1,0 +1,27 @@
+Facade pattern is used when a subsytem is having complerx interfaces
+These lot of interfaces interact with each other to retunr output to client
+Facade means a forn end that we show to client
+However we can have complex subsytem interfaces interacting and doing logic.
+We are basically hiding these complexities to client
+
+Points:
+a. We can create a class with a unified objcet input
+Instead of client calling subsystem different method and providing indepednet objects
+We can pass a unified NEw class with all the data like we have done in My verizon
+All the Apis have same request hence having unified object for facade
+
+b. We can still use the complex subsystem method instead of facade as facadae is usut a new class
+and we do not modify existing subsystem classes and interfaces
+Advantages
+Loose coupling
+Ease of use
+Unified ojects
+However client have option to use facade or direct subsystem classes
+
+This is easiest to implement as we just need to create one class with unified object and methods
+These simle methods will call set of methods from subsytem whihc take inout as its individual objects
+
+Steps:
+Create a new class 
+Create methods that contain unified objects all combined to a single class
+Take parts of input arguments from facade and pass to individual methods of subsystem

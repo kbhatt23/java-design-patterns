@@ -1,0 +1,32 @@
+we must ensure that one class instance exist, and also enusres client classes do not brak this contract and create more than one instance by mistake
+
+advantages:
+in case like threadpool, cache, global configuration , driver manager, file manager we need only one instance of class
+add encapsulation
+
+disadvantages:
+it compromises unit testing
+
+we should use dependency injection from framework when we want to enable unit testing
+also when tthere is no need of statics we can still use DI framework
+
+In case there are huge number of classes using the singleto class then DI do not make sense to autwire in so many classe,
+instead use singleton in these cases 
+
+in double checked locking lazy style we support below:
+perfoirmamce issue : first if condition is to ensure that we do not synchroize always. we do it only util first object creation is needed, hence adding volatile
+multiuthreading issue : by sunchirzing and adding secoind if null condition chekc ensures it
+
+issues with singleton:
+a. relfection API  : we can solve this by using enum , as reflection can not create object of enum 
+b. clone : we cna override clone method and return same private volatile instace , or throw unsupprtedoperation exception if called
+c. serializtion issue : override readResolve method and return same private volatile instace
+
+
+eager init is easy as it solve thread issue but uneecasry we create object even though we do not need it
+should not use when object needs a lot of resources , eg : we shud not use this for DB connection , etc
+
+
+most of the time singleton is used for things like DB connection filemanager etc whihc needed a lot of resources and memory
+so we sud not create instances until asked by client whihc is lazy evalualtion
+hence bill pugh singleton is best as it solves all the isssue,-> multi threaded issue , performace, etc

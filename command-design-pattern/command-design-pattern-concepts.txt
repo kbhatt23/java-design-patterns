@@ -1,0 +1,34 @@
+command design pattern is used to decouple task actions and client
+
+Command is seggragate as set of actions , So client will call the real API
+however that request will always be Command instance
+This will seggregate the actions and commands and client
+When to use
+a. When there can be any number of actions so we can wrap each with Common ocmmand interface
+This will help client to conside input to api as same whatever actions needs to be executed
+b. when we have to give freedom to client if it want to execute the action later on
+or undo or redo the tasks ,This freedom is needed
+
+Definition 
+comand pattern says every request from client should consider input to API as common interace
+called as command.
+client is given freedom as when to execute the action, trace it and redo in case of error
+
+Parts of patter:
+a. Command: This is the common interface for all the different operations
+b. Reciever : This class or interface will have all the business methods
+.We must create classes for each of these methods implementing Command interface
+c. Invoker: This is the class that client will use to invoke whihc internally calls the command concrete
+whihc calls reciever.
+We cna have dumb command if we do not do any logic and directly calls revier
+smart commands can have features like storing state of class before undoing the changes
+
+Steps in code:
+Command interfae: will have mthods execute , and in case of smart commands-> redo() and undo();
+Concreate Commands implements command nad adda  composition ro reciever
+The reciever is created by client and passed to constructor of concrete commands
+Invoker class will have a composition of Command and it is set by client calling constructor
+of invoker and passing concrete command
+client can now call execute method of invoker that just passes it to command concrete class
+whihc passes to reciever
+

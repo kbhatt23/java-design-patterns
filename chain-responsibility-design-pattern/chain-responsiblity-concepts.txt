@@ -1,0 +1,11 @@
+chain of responsiblkity meant to pass the same request object to multiple objects(of multiple classes)
+When to use:
+a. when we want to decouple clietn and api provider like facade show easy things to client hiding complexity
+b. when same request of clinet need to be handled by multiple classes(we need multiple classes to add single responsibility priniciple)
+
+Eg:
+IT support team , an empoiyee create a ticket and it passes on to main object then that passes to next object and so on.
+it gives error if none of the object gets to handle it.
+
+OOB JDK : try catch patter catch is chain handler for same exception object passes form top to down
+Filter patter in j2ee servlets

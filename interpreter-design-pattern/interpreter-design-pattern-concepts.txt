@@ -1,0 +1,22 @@
+This isused when we need to evaluate some expression based on grammar
+It is simliar to interpretion
+java code gets converted by compiler using javac command to byte code whihc JVM understarts
+
+This is mostly used in PAttern package and expression package
+
+This pattern let the client do the parsing
+Based on grammer we can set rules and pass the context(xontext is the utility class having rela logic)
+parsing need to be taken care by client
+
+This can be only used when grammar is not very complex
+Otherise log of classes and functiolaties woill be created
+
+Interpreter uses command pattern semi structure
+
+REciver is like expression context
+And for each method in expression context we are creating a different instance of Expression
+
+So expresison context plays simliar role as Reciever(utility method)
+Expression interface is similar to Command interface
+We need to create each class for each methoid of expression utility class that implements Expression
+

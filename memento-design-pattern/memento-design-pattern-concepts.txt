@@ -1,0 +1,16 @@
+memento design patterns is used when we want to save state of an object before implemetning a method
+Eg: DB rollbak, tracnsatcion rollback, fileoperation rollback, undo
+It is similar to command patter however main purpose of command pattern is to to simplify the request object between client and api
+Same request object will be passed from client in request even for differnet operations or methods of reciever as each method of recciever is having one concrete class if command interface
+
+This pattern ensures that encapsulation is not broken even while savin state
+Apart from main class no one should be seeing the saved state of class
+Hence we use inner class for this a private inner class
+
+This pattern ensures that saved data is not shown to client
+it is only visible to originator class
+
+PArts osf pattern:
+a. Originaor: Class having business functionloity : it has instance variable states and one method operates and changes the state after logic
+b. Memento: Inner class that is replica of main class. It saves the main originator data states
+c. Helper: This class actually holds the memento object so that client is not aware of that.It stores data in object so that no one know what object is saved

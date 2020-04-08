@@ -1,0 +1,28 @@
+MEdiator patternas the name suggest is used when two complex objet interacts
+To reduce dependency in complex objects we create a mediator class that interacts between these complex objects
+
+example can be airport system
+all the flights are interconnected via common communication via a mediator called airport call lines
+
+this reduces the loose coupling and complex objects can interact easily
+
+Also in case of complex object interaction we would like to have a common channel
+for example client assign task to devlopers via managers
+this can be used for centrazlized interaction between complex objects
+
+This pattern is used when two different subclass of same super type (concrete classes are very complex) interact with each other
+Instance of one having has a relationship with other one and second one having has a instance of first one
+We create mediator concrete class whihc make the intraction between these complex object possible
+mediator routes to coorect instance
+
+
+mediator pattern is  used in reflection api
+also used in event system aling with observer pattern
+
+advantages
+centralized control, disdvantage: mediator might become too complex monolith
+centralized location means any new modification or bugs can be easily seen at this place called mediator
+When colleagues interacts using only one mediator then no need of mediator interface
+loose coupling
+reduces too many has a relationship, as mediator will have all the instances of collecues and appropriate methods
+in normal case each concrete colleague will have instance of other ones -> basically one to many relationship will be reduces to one to one relationship

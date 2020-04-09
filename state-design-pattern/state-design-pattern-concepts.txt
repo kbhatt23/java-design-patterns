@@ -1,0 +1,19 @@
+State design patterns is usedful when class behaves differently based on state of inbstance variable
+What it means is based on one or more values of instance variable(state of class)
+if methods(behaviours) work differenlty then we can used this pattern
+
+Instead of having a huge monolith of if and else cases chceking condition based on instance variable
+we can have serperate class handling this
+each condition can go to concrete impletmentation of State interace
+
+advanatages:
+a. more extenisble code
+b. easy to find bugs
+c. more flexibility in adding another state condition wothout breaking existing code
+d. no need to do unit testing of main context class whihc has these state concrete classes
+
+steps :
+a. in the same class whihc is already present, modify the existing string state instance variable and make it interface instance
+b. make concrete implementations of the instance and for each if conditions create seperate concrete classes
+c. decouple and pass the appropriate interface from client
+thank you

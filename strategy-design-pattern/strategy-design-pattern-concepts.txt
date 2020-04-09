@@ -1,0 +1,37 @@
+Strategy as the name suggest means collection of algorithms or group of algorithms
+In strategy pattern we combine all the implenmtation way of doing the same thing in differnetn conrete classes
+for example sorting
+Sorting is a business functioanlity but it can have different way of implmentation
+eg - bubble sort, pivot sort , etc and so on
+
+Different client can use different way to sort
+So we can use strategy pattern in these cases
+
+Code structure is same like state patter
+
+Difference is :
+In state pattern as the name suggestion we will have instanc variable of an interface and client will call the constructor 
+to pass on the conrete class to remove if else cases and use the state interface concrete class
+- it shows has a relationship
+
+In strategy patter the interface concrete class is not need to be saved as state as state may vary but strategy wont
+so it is passed as method argument
+- It shows uses a relationship
+
+Eg of this pattern:
+Collection.sort() - > we can pass any comparator to get te job done.
+sort is doing nothing but sorting but concrete implementnation can be different
+
+Advantatges:
+a/ loose coupling
+b. high cohesion of classes
+c. no need of if else calse
+d. unit testing can be done
+e. single repsonsibiuty
+f. open closed priniciple: new strategies willl come without affecting existing class, hence less unit test to be taken care
+g. mocking can be easily done because of dependency inversion
+
+client calls context class -> context class calls mehtod of interface by passing the data recived
+Generally in strategy pattern , the interface is passed to the method of context and not kept as instance variable
+context can either pass the data to strategy concrete class as method argument, or can passitslef using this , so that strategy can call methods from context
+This adds circular dependency

@@ -1,0 +1,18 @@
+observer design pattern is used in poublisher subscriber scenarios
+
+It provides a one to many relationship between subject and listeners(or publisher to subscriber)
+All the subscriber can register to publisher
+when any state is changed in publisher it send message to only registered subscriber
+subscriber can de register at any time
+
+So it shows one to many relations nhip similar to mediator pattern
+
+This pattern adds loose coupling between data publisher and data recievers or classes who are dependent on other class
+Represents one to many relationship from data publisher
+
+Publisher dpo not know anything about concrete implementation of listners or observer
+Just interface is shown and inner detals of concrete impleentation of observer is hidden
+
+This is implemented oob in java by Obersavble and observer
+Obserbvable class resporesents subject
+observer represents listeners

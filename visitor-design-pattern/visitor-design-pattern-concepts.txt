@@ -1,0 +1,13 @@
+visitor pattern is used in case of an operation on each element of a collection or a data structure
+
+suppose list or set of A class exist, if we want to call a method on each of these based on instance of condition
+it is not flexibile enough for future
+we will have to modify the existing code in existing class
+we can use visitor pattern to sperate this logic out to different class
+client will need to provide the actual concrete implementation of viitor it want to use
+
+our main aim is not to put complex logic in a method of each iteration element 
+as any change will make it editable in future
+adavantage:
+single repsosibiity priicnple
+oopen clsoed principle

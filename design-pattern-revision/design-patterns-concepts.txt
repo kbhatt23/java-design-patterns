@@ -1,0 +1,89 @@
+- encapsulation: hiding the data , private fields with public setter and getters
+		-> adds security and data corruption
+- abstraction: hidng the internal implemetattion , just provide rough things we can do , how it is done is hidden
+	Programming to an interface/abstract class
+
+- encapsulation means coupling methods(behavior) and fields(state) into single entity, 
+	hence creating a class itslef can be considered as encapsualtion
+	- in older days tocombine logical varialbles we coul use array(for homegeneros data variable) or construct
+	but construct could not have method(behvior) so came class to encapsulate fields and methods together in single entity
+	- we must know that encapulated things are away from corruption as it is sealed and hence data hiding(using setter and getter) exist in encapsulated class
+
+- Aggregation: 
+	Both the entities can exist independently, meaning if instance of one class is GCed other class's instance should remain on the heap
+	eg: College have teacher and student, as they can remain existing independently
+- Composition:
+	Both are tightly coupled, one can not exist without other
+	if outer class gets removed by G.C it should kill the object of the inner one also
+
+- overloadiing is like a static polymorphism
+	same method name but different argument 
+	static because compiler knows at compile time whihc method to be invoked, unlinke overriding where it is defined at runtime
+
+- Common Design principles:
+a. DRY : Dont repeat yourself
+//DRY means do not repeat yourself
+//never put same block of code /logic at two different places, what if the logic changes 
+//then we must make change in both/all places ad there will be chances of missing some place
+ -> cost of devlopment is reduced, code is simpler to read, less cahnces of bugs, single place to fix any bug/add enhancement
+
+b. KISS: Keep it simple and stupid
+
+Dont try to create methods whihc have too much complex if else condition to handle multiple scenarios
+	-> instead break the bigger powerful method into smaller method each handling different scenarios
+	-> increases code readabiity and hence cost of developmnet
+
+eg: for loop is familar but not simple , as per kiss principle stream / internal iterator is easy to understand
+c. YAGNI: You aint gonna need it
+
+d. SLAP: Single level of abstraction
+ - useful in writing better readable methods
+ isue with very long methods:
+a. since more code means more scnearios, 
+	- it will be tough to read by new dev
+	- less chance of reusability
+	- more chance of duplication
+	- more than one reason to modify the same method
+	- less cohesion : more than one reason to cahnge
+	- more chances of bugs and tought to debug and optimize
+
+- SLAP says there should be only one reason to modify the method
+eg validation method should not do more than validation, transform method should not do validatgion but only do trasnformation of one bean to antoher etc
+
+SOLID pattern:
+a. Single responsiblity priciple:
+	-> a class should have a concern on single responsibiliyt
+	meaning there should be a single reason to change/modify the class
+	-> benefits:
+	a. In case there are other concerns/modification this class wont be modified,
+	b. less cahnce of modification
+	c.less cahnces of bugs
+	d. loose coupling : as single class having all feature means very tight coupling
+eg: A controller class should only do contrlling task
+	> tasks like calling third party, parsing ,validation etc should not be present on controller
+	as in case there is bug/new enhnancement comes we have to modify the controller whihc can force us to spend more time on unit/integration testing
+
+b. open closed principle: can be done using overriding and extending class, predictate, custom interface for filterting etc
+
+c. Liskov substitution principle: 
+	IF we create a sublcass, then anywhere the code which takes super class should behave the same even for the subclass
+	meaning we should extend another class only if it can be completely substituted at all the palces behaviorly
+	just ofr reusability we should use aggregation/compsistion , as we can only extend one class
+	eg:  a bird class can fly but a subclass ostrich can not fly and hence sometimes it can cause issue in substituatability
+	 better use interface segregation for bird and flyable contract or use composition, Ostrictch has a Bird instance
+
+- If liskco principle breaks then better not use inheritance , lets break the relationship using extends
+	and have a clean slate, can use seperate interface contract
+
+- high level module means whihc is less usable part of code/class, a low level module means whihc is reusable at a lot of places
+	so high level module should not depend directly to low level module, instead use independent abstraction for it
+
+- Object pool pattern: when to use
+	a. when there are certain objects whihc are heavy and takes time in instantiation(time consuming as well as memory consuming)
+	b. when the objects size is huge and we can can not create huge amount
+	c. When the client need this heavy object for some time and releases it
+	create fixed size object in cache and take it from cache whenever in need
+	- do not consider this pattern in case client is using the pool object for long time,
+		as in case max size is reached then newer client instance will keep on waiting for pool to be free
+	
+	

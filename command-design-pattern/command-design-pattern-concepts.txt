@@ -32,3 +32,12 @@ of invoker and passing concrete command
 client can now call execute method of invoker that just passes it to command concrete class
 whihc passes to reciever
 
+
+Example of Command design patter:
+Runnable interface acts as command
+- we can create n implementations of runnable and pass to thread constructor whihc acts as invoker
+- internally it calles the reciever emthods for functionality
+
+Difference b/w strategy and command
+- in strategy pattern each strategy has its own business logic in itself, however in command it recieves a reciever and uses methods of reciever.
+a command is just to redirect to the reciever method based on type of command

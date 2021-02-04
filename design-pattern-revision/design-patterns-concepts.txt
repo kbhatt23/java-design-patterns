@@ -87,3 +87,43 @@ c. Liskov substitution principle:
 		as in case max size is reached then newer client instance will keep on waiting for pool to be free
 	
 	
+- Bridge design pattern is used to decouple implenentor and abstraction
+	this way we save ending up creating too many classes
+
+difference b/w bridge and adatper pattern is taht in adapter we already have existing classes in place and we just patched in between
+	but in bridge we need to make decision at the begining so that the inteent of decoupling the implemnentor and abstraction can be done
+
+pitfalls of decorator design patter:
+- Since we skips extending class and putting mnroe code in same class whihc would have lead to creating a single object
+	but in decorator we create differetn class and merge them to add features/functionality at runtime
+	hence we end up creating a lot of objevts than normal case
+	code readbility/maintainabiluity increased but ends up creating more objects
+
+- Composite pattern means that an entity contains itself(n numbers and till nth level) liuke a tree
+	for the client it looks like there is single composite item but actually there are n level of items each items having option of n levels
+
+- Flyweight pattern is used when we have sceanrio of creating huge number of objects
+	and we have limited categories of each such object type, but we are creating thousands of succ categories object
+	flyweight says we just create one object for each category adn divide the intrinsic and extrinsic states, and cahce such object
+	next time that categories object is needed we take from cache 
+	hence this also uses factory
+eg is employee as super type and developer and tester as subcalsse, 
+	instead of creating thousands of dev and qa objects we can create sigle object for each and ask client up modify
+extrinstic proeprty : state/properties that changes for each object of suc categories
+		eg: skill for devloper and QA, name
+intrinsic property: state whcih do not changes for each of the object of these categories
+	eg: example task type is devlopment for dev and testing for qa,
+	for different objects it remains same
+
+- AOP uses proxy pattern
+- Collections.unmodiiable method uses proxy
+	creates a proxy objevct that uses actual instance , only read methods are delegated and write methods are thrown with usupportedoperationexception
+
+Why we need chain of responsiblity:
+ - Lets say we have a request from client and that can be taken care of reqest provvider
+	now based on the type of request we need to have if else switch cases to identify whihc class method to call
+	now in case of frameworks if we have some many ways to handle same request but based on state of request object
+	we need to add a lot of if else case on client whihc amkes it tightly coupled with functionality provider
+	if some change is done on provider that also need code cahnge in cleint whihc si not good
+	so for easy for the cient wthey just need to know the first object and there could be cahin of objefcts whihc handles it one by one
+	this way code is flexible

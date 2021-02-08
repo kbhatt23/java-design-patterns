@@ -39,4 +39,12 @@ public class MessageSubscriable<T> implements SelfSubscriable<T>{
 		subscribers.remove(selfSubscriber);
 	}
 
+	//state change 
+	public void setName(String name) {
+		//lets not implement publish message here 
+		//let modified call the publish message
+		this.name = name;
+	}
+	
+
 }

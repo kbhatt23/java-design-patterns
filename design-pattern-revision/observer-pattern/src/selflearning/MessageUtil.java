@@ -1,5 +1,8 @@
 package selflearning;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import selflearning.GroupedSelfSubscriable.SubscriberGroup;
 
 public class MessageUtil {
@@ -11,15 +14,24 @@ public class MessageUtil {
 		SelfSubscriable<T> channel = new MessageSubscriable<>("talkfcb");
 
 		SelfSubscriber<T> user = null;
+		List<SelfSubscriber<T>> users = new ArrayList<>();
 		for(int i= 1; i <= numOfUsers ; i++) {
 			user = new MessageSubscriber<>("user-"+i);
+			users.add(user);
 			channel.subscribe(user);
 			if(unsubscribeIndex == i)
 				channel.unsubscribe(user);
 		}
 		
 		
+		channel.setName("new talkfcb");
+		System.out.println("raghav: before any update "+users);
 		channel.publishMessage(message);
+		System.out.println("raghav: after first update "+users);
+		
+		channel.setName("new talkfcb updated");
+		channel.publishMessage(message);
+		System.out.println("raghav: after second update "+users);
 	
 	}
 	

@@ -8,5 +8,7 @@ public interface SelfSubscriable<T> {
 	
 	String getName();
 	
+	void setName(String name);
+	
 	void unsubscribe(SelfSubscriber<T> selfSubscriber);
 }

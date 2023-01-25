@@ -1,7 +1,6 @@
 package selflearning;
 
 public class MessageSubscriber<T> implements SelfSubscriber<T>{
-
 	private String name;
 	private String channelName;
 	public MessageSubscriber(String name) {

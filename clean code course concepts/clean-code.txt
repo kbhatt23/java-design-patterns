@@ -1,0 +1,59 @@
+om shree ganeshaya namah
+om shree sita rama lakshman hanuman
+
+- Main goal of clean code is to write easily readable and self expressive , reusable and expandable code
+  cheaper in maintainance cost
+  -> easily read and understandable by other dev
+  -> easily expandable
+  -> less verbose and more concise
+  -> declarative and self expressive
+  -> reusable and based on DRY
+  -> follows industry wide best practises
+  
+- main goal of typed languages like java,typescript is to prevent runtime error and have compile time type safety check
+  hence we can prevent runtime errors, but it also increases code readability
+
+om shree ganeshaya namah
+om shree sita rama lakshman hanuman
+
+main goal of strict typed language is not code clean/ readability but to be copile time safe than runtime error
+
+- We must embrace refactoring and should cosider it a normal process
+  as writing clean code is not done in one day it is time consuming and takes maturity
+  so we must have code review and multiple times we need to refactor
+  Even while working on bugs/enhancement if we see some unclean code we must make it clean and readable
+so that eventually code will be clean  
+  
+  
+om shree ganeshaya namah
+om shree sita rama lakshman hanuman
+
+- Writing comment should be avoided
+ logicall if we write clean code with good meaningful names then comment should not be needed itself
+ a good clean code is self expressive and hence should be needing very minimal comments
+also if code is actually clean with proper meaningful names, writing comments will actually make it tougher to read and understand
+
+- horizontal formatting means single line should be readable
+  meaning we should ensure that dev need not to scroll on the right to see the code
+  and hence max char per line should be defined in checkstyle we should avoid long code of lines
+
+- While writing methods/functions we must ensure reading the code body is easy + calling the code is easy 
+ hence argument should be less so that client code is more readable and chance of passing wrong argument to method is easy
+ more ease of usage and easier to understand
+
+- goal of method splitting should be:
+ a. adding readability
+ b. adding reusability
+ c. adding extensibility: maintainance , DRY based helps in modify code in single place
+ 
+- side effect in method is fine but that should be intentional
+method name should express that whether client should or not expect the side effect 
+
+om shree ganeshaya namah
+om shree sita rama lakshman hanuman
+
+om shree ganeshaya namah
+om shree sita rama lakshman hanuman
+
+
+

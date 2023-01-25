@@ -2,8 +2,8 @@ all design patterns uses design prinicple
 design principles focus on high cohesion and low coupling
 prioritizes abstraction over implementation
 
-High level modules -> which gets modified very less
-low level modules -> classes whihc gets modified more
+High level modules -> which gets modified very less eg: controller
+low level modules -> classes whihc gets modified more eg: serviceimpls
 
 So high level module should use low level modules using interfaces so that contract never breaks
 when we change low level module the users of this class hsould not get affected and interfaces makes sure of this contract
@@ -20,12 +20,14 @@ hence data abstraction is established by showing what methods to use to get the 
 
 encapsulation : this is achieved by setter getters and private instance variable again hiding data
 
-Aggreation : this is reltionship between two objects when both can remain independently
+Aggreation : this is reltionship (has a) between two objects when both can remain independently
+ - both object can exist independently
+ - this is unidirectional
 eg Airport class hainvg instance variable of Airplanes
 AeroPlane and airport are related but can remain isolated and both can exist t same time
 
 Composition: this is reltionship between two objects when both can not remain independently
-clid class can not exisitt withput parent class
+clid class can not exisit withput parent class
 both aggreagation and comopistion are for has a relationship but in aggreagation both objects can existing independelty 
 but in composition child can not existing without parent
 

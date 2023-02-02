@@ -1,0 +1,13 @@
+om shree ganeshaya namah
+om shree sita rama lakshman hanuman
+
+- Refactoring means editing existing code to make it cleaner
+  it is a continuous process and can not be done in single attempt completely
+  
+- Basically meaning of refactoring means restructuring the code in such a way that 
+  it is easier to read, easier to reuse and enhance and hence cheaper in extension and maintainance
+  plus the existing functionalities should not break
+  business thinks why to waste time in this and not just do new feature development
+  but after some time tech debt is so much that new enhancement development takes extremely huge time
+
+hence we should balance b/w tech dept and new functionality development which business does not understand
